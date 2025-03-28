@@ -58,6 +58,19 @@
     },
     "mission_mg6G4f": {
       "type": "mission",
+      "blocks": {
+        "column_RzTeye": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/Rectangle_2.png",
+            "column_title": "12312gvh",
+            "column_subtitle": "ghfgh"
+          }
+        }
+      },
+      "block_order": [
+        "column_RzTeye"
+      ],
       "settings": {
         "title": "Our Mission",
         "description": ""
