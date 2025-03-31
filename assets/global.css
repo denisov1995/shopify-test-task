@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('{{ 'my-custom-font.woff' | asset_url }}') format('woff');
+  src: url('{{ 'SofiaProBold.ttf' | asset_url }}') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
