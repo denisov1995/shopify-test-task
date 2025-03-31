@@ -2,14 +2,11 @@
 
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('{{ "./SofiaProBold.woff" | asset_url }}') format('woff');
+  src: url('{{ 'my-custom-font.woff' | asset_url }}') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'MyCustomFontBold';
-  src: url('{{ "SofiaProRegular" | asset_url }}') format('woff');
-  font-weight: bold;
-  font-style: normal;
+body {
+  font-family: 'MyCustomFont', sans-serif !important;
 }
