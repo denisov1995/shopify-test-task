@@ -111,9 +111,9 @@
         ".mission-text-span {font-family: var(--font-family); font-weight: 700; font-size: 18px; line-height: 144%; color: var(--black);}"
       ],
       "settings": {
-        "title": "Our Mission",
+        "title": "Mission",
         "image": "shopify://shop_images/2438_2_729a081c-2d5c-4b34-830a-874709bcb538.jpg",
-        "description": "<span class=\"mission-text-span\">Energy Transition is our core and only focus.</span> We structure complex, meaningfully large renewable natural gas (RNG) and power transactions for companies committed to environmentally-sound, commercially-ready solutions.\nOur principals are experienced practitioners who have run companies, originated and closed complex deals, advocated and negotiated favorable policy and advanced technological innovation. With over three decades of combined experience in renewables specifically, our customers chose us, every time, for our unparalleled industry knowledge, market acumen, professionalism and commitment to their prosperity."
+        "description": "<span class=\"mission-text-span\">Energy Transition is our core and only focus.</span> We structure complex, meaningfully large renewable natural gas (RNG) and power transactions for companies committed to environmentally-sound, commercially-ready solutions.\n\nOur principals are experienced practitioners who have run companies, originated and closed complex deals, advocated and negotiated favorable policy and advanced technological innovation. With over three decades of combined experience in renewables specifically, our customers chose us, every time, for our unparalleled industry knowledge, market acumen, professionalism and commitment to their prosperity."
       }
     },
     "rich_text": {
