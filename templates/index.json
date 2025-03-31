@@ -73,7 +73,8 @@
       ],
       "settings": {
         "title": "Our Mission",
-        "description": ""
+        "image": "shopify://shop_images/Rectangle_2.png",
+        "description": "213"
       }
     },
     "rich_text": {
