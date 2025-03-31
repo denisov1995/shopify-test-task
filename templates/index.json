@@ -62,14 +62,50 @@
         "column_RzTeye": {
           "type": "column",
           "settings": {
-            "column_image": "shopify://shop_images/Rectangle_2.png",
-            "column_title": "12312gvh",
-            "column_subtitle": "ghfgh"
+            "column_image": "shopify://shop_images/Group_263_c44790b7-fce8-4855-a148-80a3deab100e.png",
+            "column_title": "$1B",
+            "column_subtitle": "in closed RNG transactions in 2021 alone"
+          }
+        },
+        "column_L36Ykw": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/Group_262_959ce647-b36f-41b9-8391-a619708ecdae.png",
+            "column_title": "$4B",
+            "column_subtitle": "in cumulative Renewable Energy and RNG closings"
+          }
+        },
+        "column_MzHxEb": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/Group_261_42f23174-91d7-4feb-b577-c8717f855d5b.png",
+            "column_title": "30Yrs",
+            "column_subtitle": "of collective industry experience"
+          }
+        },
+        "column_zULrLU": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/Group_260_87c14afc-56a7-4772-99b3-f108f83a9546.png",
+            "column_title": "$300M",
+            "column_subtitle": "in capital placed for client ventures"
+          }
+        },
+        "column_e3xcXa": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/Group_259_501b506d-538e-4325-80f2-2bc163448e6f.png",
+            "column_title": "100%",
+            "column_subtitle": "independent and unbiased advice"
           }
         }
       },
       "block_order": [
-        "column_RzTeye"
+        "column_RzTeye",
+        "column_L36Ykw",
+        "column_MzHxEb",
+        "column_zULrLU",
+        "column_e3xcXa"
       ],
       "settings": {
         "title": "Our Mission",
