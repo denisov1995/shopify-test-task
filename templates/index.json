@@ -107,9 +107,7 @@
         "column_zULrLU",
         "column_e3xcXa"
       ],
-      "custom_css": [
-        ".mission-text-span {font-family: var(--font-family); font-weight: 700; font-size: 18px; line-height: 144%; color: var(--black);}"
-      ],
+      "custom_css": [],
       "settings": {
         "title": "Mission",
         "image": "shopify://shop_images/2438_2_729a081c-2d5c-4b34-830a-874709bcb538.jpg",
