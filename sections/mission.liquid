@@ -60,7 +60,7 @@
     <div class="mission-content">
       <img
         class="mission-image"
-        src="{{ section.settings.image | img_url }}"
+        src="{{ section.settings.image | img_url: 'original' }}"
         alt="Mission Image"
       >
       <p class="mission-text">{{ section.settings.description }}</p>
