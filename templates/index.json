@@ -277,6 +277,26 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "mission_nVTrWN": {
+      "type": "mission",
+      "blocks": {
+        "column_qaXBEW": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/2438_2_164e11ce-5542-4dbd-9b70-e8eeaa410e89.jpg",
+            "column_title": "123",
+            "column_subtitle": "123"
+          }
+        }
+      },
+      "block_order": [
+        "column_qaXBEW"
+      ],
+      "settings": {
+        "title": "Our Mission",
+        "description": ""
+      }
     }
   },
   "order": [
@@ -286,6 +306,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "mission_nVTrWN"
   ]
 }
