@@ -11,5 +11,10 @@
   %}
 {% endcomment %}
 <script src="{{ 'contact-us-button.js' | asset_url }}" defer="defer"></script>
-
-<button is="link-button" data-url="{{ link }}">{{ text }}</button>
+{{ 'contact-us-button.css' | asset_url | stylesheet_tag }}
+<button is="link-button" class="header-link-button" data-url="{{ link }}">
+  {% if button_image %}
+    <img class="header-link-button__image" src="{{ button_image | image_url }}" alt="Кнопка">
+  {% endif %}
+  {{ text }}
+</button>
