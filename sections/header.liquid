@@ -182,6 +182,7 @@
           {% for link in section.settings.menu.links %}
             <a href="{{ link.url }}">{{ link.title }}</a>
           {% endfor %}
+          <button is="link-button" data-url="{{ section.settings.button_link }}">Перейти</button>
         </nav>
         <div class="burger-btn"></div>
       </div>
