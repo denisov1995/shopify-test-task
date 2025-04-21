@@ -16,8 +16,9 @@
         "title": "Marvel Power Group",
         "subtitle": "Marvel Power Group is a boutique, climate-focused transaction broker and commercial advisor. We provide expert services to clients in transportation, power and gas operations, waste management, industrial processing, trading and logistics.",
         "button_text": "CONTACT US",
-        "button_link": "",
-        "notification": ""
+        "button_image": "shopify://shop_images/Group_112.svg",
+        "button_link": "https://example.com",
+        "notification": "Scroll for more"
       }
     },
     "mission_mg6G4f": {
