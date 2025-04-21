@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "hero_bUmVJ3": {
+    "hero_z6wJCM": {
       "type": "hero",
       "settings": {
         "title": "Marvel Power Group",
@@ -243,7 +243,7 @@
     }
   },
   "order": [
-    "hero_bUmVJ3",
+    "hero_z6wJCM",
     "mission_mg6G4f",
     "rich_text",
     "featured_collection",
