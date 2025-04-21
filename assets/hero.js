@@ -1,1 +1,1 @@
-document.querySelectorAll("an");
+(()=>{"use strict";document.querySelectorAll("an")})();
