@@ -11,7 +11,6 @@
   "sections": {
     "hero_z6wJCM": {
       "type": "hero",
-      "disabled": true,
       "settings": {
         "background_image": "shopify://shop_images/robert-bye-R-WtV-QyVnY-unsplash_135415e9-0bba-47e2-a29c-2e433cb8136a.jpg",
         "title": "Marvel Power Group",
@@ -73,47 +72,11 @@
         "column_zULrLU",
         "column_e3xcXa"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "title": "Mission",
         "image": "shopify://shop_images/2438_2_729a081c-2d5c-4b34-830a-874709bcb538.jpg",
         "description": "<span class=\"mission-text-span\">Energy Transition is our core and only focus.</span> We structure complex, meaningfully large renewable natural gas (RNG) and power transactions for companies committed to environmentally-sound, commercially-ready solutions.\n<br>\n<br>\nOur principals are experienced practitioners who have run companies, originated and closed complex deals, advocated and negotiated favorable policy and advanced technological innovation. With over three decades of combined experience in renewables specifically, our customers chose us, every time, for our unparalleled industry knowledge, market acumen, professionalism and commitment to their prosperity."
-      }
-    },
-    "services_QCYhai": {
-      "type": "services",
-      "blocks": {
-        "service_column_iTrFXr": {
-          "type": "service_column",
-          "settings": {
-            "column_title": "Transaction Support",
-            "items_list": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring"
-          }
-        },
-        "service_column_EcbgHA": {
-          "type": "service_column",
-          "settings": {
-            "column_title": "Enterprise Strategy",
-            "items_list": "Market advisory\nRisk management\nCapital sourcing or deployment\nResource optimization"
-          }
-        },
-        "service_column_cDXgw6": {
-          "type": "service_column",
-          "settings": {
-            "column_title": "Market Development",
-            "items_list": "New venture strategy\nGo-to-market architecture\nM&A support\nMarketing and partnerships"
-          }
-        }
-      },
-      "block_order": [
-        "service_column_iTrFXr",
-        "service_column_EcbgHA",
-        "service_column_cDXgw6"
-      ],
-      "settings": {
-        "title": "Our Services",
-        "description": ""
       }
     },
     "rich_text": {
@@ -284,7 +247,6 @@
   "order": [
     "hero_z6wJCM",
     "mission_mg6G4f",
-    "services_QCYhai",
     "rich_text",
     "featured_collection",
     "collage",

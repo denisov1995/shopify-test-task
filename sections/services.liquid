@@ -78,14 +78,7 @@
   <div class="container">
     <h2 class="mission-title">{{ section.settings.title }}</h2>
     <div class="mission-indent"></div>
-    <div class="mission-content">
-      <img
-        class="mission-image"
-        src="{{ section.settings.image | img_url: 'original' }}"
-        alt="Mission Image"
-      >
-      <p class="mission-text">{{ section.settings.description }}</p>
-    </div>
+    <p class="mission-text">{{ section.settings.description }}</p>
 
     <div class="mission-columns">
       {% for block in section.blocks %}
