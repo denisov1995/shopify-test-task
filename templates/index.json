@@ -12,6 +12,7 @@
     "hero_z6wJCM": {
       "type": "hero",
       "settings": {
+        "background_image": "shopify://shop_images/robert-bye-R-WtV-QyVnY-unsplash.jpg",
         "title": "Marvel Power Group",
         "subtitle": "",
         "button_text": "CONTACT US",
