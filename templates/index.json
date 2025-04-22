@@ -88,21 +88,24 @@
           "type": "service_column",
           "settings": {
             "column_title": "Transaction Support",
-            "items_list": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring"
+            "items_list": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring",
+            "column-image": "shopify://shop_images/Group_160.png"
           }
         },
         "service_column_Cm6AXG": {
           "type": "service_column",
           "settings": {
             "column_title": "Enterprise Strategy",
-            "items_list": "Market advisory\nRisk management\nCapital sourcing or deployment\nResource optimization"
+            "items_list": "Market advisory\nRisk management\nCapital sourcing or deployment\nResource optimization",
+            "column-image": "shopify://shop_images/Group_160.png"
           }
         },
         "service_column_Chh9eX": {
           "type": "service_column",
           "settings": {
             "column_title": "Market Development",
-            "items_list": "New venture strategy\nGo-to-market architecture\nM&A support\nMarketing and partnerships"
+            "items_list": "New venture strategy\nGo-to-market architecture\nM&A support\nMarketing and partnerships",
+            "column-image": "shopify://shop_images/Group_160.png"
           }
         }
       },
@@ -114,7 +117,8 @@
       "settings": {
         "title": "Services",
         "image": "shopify://shop_images/Rectangle_206.png",
-        "description": "Our clients are keenly focused on reliable, existing low-carbon solutions. Their mandates are complex: balance project needs with customer demands, regulatory frameworks, lofty investment targets and developmental complexities. Layer on market volatility and regulatory risk and the scope becomes less manageable in-house. This is where Marvel comes in. We understand the task and bring deep expertise to addressing these challenges."
+        "description": "Our clients are keenly focused on reliable, existing low-carbon solutions. Their mandates are complex: balance project needs with customer demands, regulatory frameworks, lofty investment targets and developmental complexities. Layer on market volatility and regulatory risk and the scope becomes less manageable in-house. This is where Marvel comes in. We understand the task and bring deep expertise to addressing these challenges.",
+        "second-description": "Our clients are time constrained and under-resourced. Agendas shift, budgets move and priorities change. We understand. We are agile, creative and immediately responsive to your various working styles, governance requirements and evolving needs."
       }
     },
     "collage": {
