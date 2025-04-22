@@ -63,9 +63,9 @@
         {
           "type": "metaobject_list",
           "id": "column_images_social",
-          "label": "Column Image Social",
-          "info": "Add multiple images",
-          "metaobject_type": "image_gallery"
+          "label": "Социальные иконки",
+          "metaobject_type": "social_icons",
+          "info": "Добавьте иконки с ссылками на соцсети"
         }
       ]
     }
@@ -119,16 +119,28 @@
           </ul>
 
           <p class="team-career-history">Education</p>
-          <ul class="team-items-list">
+          <ul class="team-items-list education">
             {% assign items = block.settings.items_list_education | newline_to_br | split: '<br />' %}
             {% for item in items %}
               <li class="team-item">{{ item | strip }}</li>
             {% endfor %}
           </ul>
 
-          {% for item in block.settings.column_images_social %}
-            <img src="{{ item.image | image_url }}" alt="Social Image">
-          {% endfor %}
+          <div class="team-social-images">
+            {% for item in block.settings.column_images_social %}
+              {% if item.image and item.link %}
+                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="{{ item.image | image_url: width: 40 }}"
+                    alt="{{ item.alt_text | default: 'Social Icon' }}"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                  >
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       {% endfor %}
     </div>
