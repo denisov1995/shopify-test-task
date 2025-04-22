@@ -114,11 +114,46 @@
         "service_column_Cm6AXG",
         "service_column_Chh9eX"
       ],
+      "disabled": true,
       "settings": {
         "title": "Services",
         "image": "shopify://shop_images/Rectangle_206.png",
         "description": "Our clients are keenly focused on reliable, existing low-carbon solutions. Their mandates are complex: balance project needs with customer demands, regulatory frameworks, lofty investment targets and developmental complexities. Layer on market volatility and regulatory risk and the scope becomes less manageable in-house. This is where Marvel comes in. We understand the task and bring deep expertise to addressing these challenges.",
         "second-description": "Our clients are time constrained and under-resourced. Agendas shift, budgets move and priorities change. We understand. We are agile, creative and immediately responsive to your various working styles, governance requirements and evolving needs."
+      }
+    },
+    "team_JbDxBP": {
+      "type": "team",
+      "blocks": {
+        "team_column_ewQyJh": {
+          "type": "team_column",
+          "settings": {
+            "column_name": "Katherine Ryzhaya",
+            "column_job_title": "",
+            "column_description": "",
+            "items_list_career": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring",
+            "items_list_education": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring",
+            "column_images_social": []
+          }
+        },
+        "team_column_FgchqG": {
+          "type": "team_column",
+          "settings": {
+            "column_name": "Katherine Ryzhaya",
+            "column_job_title": "",
+            "column_description": "",
+            "items_list_career": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring",
+            "items_list_education": "Renewable Natural Gas offi ales\nRIN, RTC, REC and LCFS brokerage\nRenewable PPA origination\nContract negotiations and structuring",
+            "column_images_social": []
+          }
+        }
+      },
+      "block_order": [
+        "team_column_ewQyJh",
+        "team_column_FgchqG"
+      ],
+      "settings": {
+        "title": "Team"
       }
     },
     "collage": {
@@ -232,6 +267,7 @@
     "hero_z6wJCM",
     "mission_mg6G4f",
     "services_JjdKEj",
+    "team_JbDxBP",
     "collage",
     "video",
     "multicolumn"
