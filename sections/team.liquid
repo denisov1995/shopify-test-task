@@ -126,8 +126,8 @@
             {% endfor %}
           </ul>
 
-          {% for image in block.settings.column_images_social %}
-            <img src="{{ image | file_url }}" alt="Social Image">
+          {% for item in block.settings.column_images_social %}
+            <img src="{{ item.image | image_url }}" alt="Social Image">
           {% endfor %}
         </div>
       {% endfor %}
