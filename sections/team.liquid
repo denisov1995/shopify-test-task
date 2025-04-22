@@ -126,17 +126,9 @@
             {% endfor %}
           </ul>
 
-          <img
-            class="team-arrow"
-            src="{{block.settings.column_image_social | image_url}}"
-            alt="arrow-right"
-          >
-
-          <img
-            class="team-arrow"
-            src="{{block.settings.column_image_social | image_url}}"
-            alt="arrow-right"
-          >
+          {% for image in block.settings.column_images_social %}
+            <img src="{{ image | file_url }}" alt="Social Image">
+          {% endfor %}
         </div>
       {% endfor %}
     </div>
