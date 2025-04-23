@@ -30,26 +30,26 @@ function updateQuantity(variantId, quantity) {
 }
 
 // Remove item from cart
-function removeItem(variantId) {
-  fetch('/cart/change.js', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      id: variantId,
-      quantity: 0,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      refreshCart(data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-}
+// function removeItem(variantId) {
+//   fetch('/cart/change.js', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Accept: 'application/json',
+//     },
+//     body: JSON.stringify({
+//       id: variantId,
+//       quantity: 0,
+//     }),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       refreshCart(data);
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+// }
 
 // Refresh cart contents
 function refreshCart(cart) {

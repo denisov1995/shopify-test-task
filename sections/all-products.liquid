@@ -1,0 +1,253 @@
+{% schema %}
+{
+  "name": "All Products",
+  "settings": [],
+  "presets": [
+    {
+      "name": "All Products"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  class CartSystem {
+    static async updateCart() {
+      try {
+        const cartResponse = await fetch('/cart.js');
+        const cartData = await cartResponse.json();
+        this.updateCartUI(cartData);
+        await this.updateCartSection();
+        return cartData;
+      } catch (error) {
+        console.error('Cart update error:', error);
+      }
+    }
+
+    static updateCartUI(cartData) {
+      // Обновляем счетчик товаров
+      document.querySelectorAll('.cart-count, .cart-count-bubble').forEach((el) => {
+        el.textContent = cartData.item_count;
+        el.classList.toggle('hidden', cartData.item_count === 0);
+      });
+
+      // Обновляем субтотал - ИСПРАВЛЕННАЯ ЧАСТЬ
+      document.querySelectorAll('.cart-subtotal').forEach((el) => {
+        el.textContent = this.formatMoney(cartData.total_price);
+      });
+    }
+
+    static formatMoney(cents) {
+      return '$' + (cents / 100).toFixed(2);
+    }
+
+    static async updateCartSection() {
+      try {
+        const response = await fetch('/?section_id=sidebar-cart');
+        const html = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newCartContent = doc.getElementById('sidebar-cart').innerHTML;
+
+        const cartContainer = document.getElementById('sidebar-cart');
+        if (cartContainer) {
+          cartContainer.innerHTML = newCartContent;
+        }
+      } catch (error) {
+        console.error('Section update error:', error);
+      }
+    }
+  }
+
+  class AllProducts {
+    constructor() {
+      this.initCartEvents();
+      this.initProductEvents();
+    }
+
+    initCartEvents() {
+      // Обработчики для кнопок внутри корзины
+      document.addEventListener('click', async (e) => {
+        console.log('e.target', e.target);
+        if (e.target.closest('.cart-item__header')) {
+          console.log(013);
+
+          e.preventDefault();
+          const variantId = e.target.closest('[data-remove-item]').dataset.removeItem;
+          await this.removeItem(variantId);
+        }
+
+        if (e.target.closest('[data-update-item]')) {
+          const input = e.target.closest('[data-update-item]');
+          const variantId = input.dataset.updateItem;
+          const quantity = input.value;
+          await this.updateItem(variantId, quantity);
+        }
+      });
+    }
+
+    initProductEvents() {
+      document.querySelectorAll('.product-form').forEach((form) => {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          await this.addToCart(formData);
+        });
+      });
+    }
+
+    async addToCart(formData) {
+      try {
+        await fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData,
+        });
+        await CartSystem.updateCart();
+        this.showSidebarCart();
+      } catch (error) {
+        console.error('Add to cart error:', error);
+      }
+    }
+
+    // async removeItem(variantId) {
+    //   try {
+    //     await fetch('/cart/change.js', {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({
+    //         id: variantId,
+    //         quantity: 0,
+    //       }),
+    //     });
+    //     await CartSystem.updateCart();
+    //   } catch (error) {
+    //     console.error('Remove item error:', error);
+    //   }
+    // }
+
+    async removeItem(variantId) {
+      console.log('222', 2222);
+      // try {
+      //   const a = await fetch('/cart/change.js', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({
+      //       id: variantId,
+      //       quantity: 0,
+      //     }),
+      //   });
+      //   console.log('a', a);
+
+      //   // Обновляем корзину с проверками
+      //   const cart = await this.refreshCart();
+
+      //   // Если корзина пуста, закрываем sidebar
+      //   if (cart.item_count === 0) {
+      //     this.closeSidebarCart();
+      //   }
+      // } catch (error) {
+      //   console.error('Remove item error:', error);
+      // }
+    }
+
+    async updateItem(variantId, quantity) {
+      try {
+        await fetch('/cart/change.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: quantity,
+          }),
+        });
+        await CartSystem.updateCart();
+      } catch (error) {
+        console.error('Update item error:', error);
+      }
+    }
+
+    showSidebarCart() {
+      const sidebarCart = document.getElementById('sidebar-cart');
+      if (sidebarCart) {
+        sidebarCart.classList.add('active');
+        document.body.classList.add('no-scroll');
+      }
+    }
+  }
+
+  // Инициализация при загрузке страницы
+  document.addEventListener('DOMContentLoaded', () => {
+    new AllProducts();
+
+    // Первоначальное обновление корзины
+    CartSystem.updateCart();
+  });
+{% endjavascript %}
+
+{% style %}
+  .all-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .all-product-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .all-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-form button {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .product-form button:hover {
+    background: #333;
+  }
+{% endstyle %}
+
+<div class="all-products-section">
+  <h2 class="section-title">All Products</h2>
+  <div class="all-products-grid">
+    {% for product in collections.all.products %}
+      <div class="all-product-card">
+        <a href="{{ product.url }}" class="product-link">
+          <img
+            src="{{ product.featured_image | img_url: '400x' }}"
+            alt="{{ product.title | escape }}"
+            loading="lazy"
+            width="400"
+            height="{{ 400 | divided_by: product.featured_image.aspect_ratio | round }}"
+            class="product-image"
+          >
+          <h3 class="product-title">{{ product.title }}</h3>
+          <p class="product-price">{{ product.price | money }}</p>
+        </a>
+        <form class="product-form">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" aria-label="Add {{ product.title }} to cart">Add to Cart</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+</div>
