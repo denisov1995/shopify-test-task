@@ -1,0 +1,170 @@
+<div id="sidebar-cart" class="sidebar-cart">
+  <div class="sidebar-cart__overlay" onclick="toggleSidebarCart()"></div>
+  <div class="sidebar-cart__content">
+    <div class="sidebar-cart__header">
+      <h3>Your Cart</h3>
+      <button class="sidebar-cart__close" onclick="toggleSidebarCart()">&times;</button>
+    </div>
+
+    {% if cart.item_count > 0 %}
+      <!-- Progress bar for free shipping -->
+      <div class="free-shipping-bar">
+        {% assign free_shipping_threshold = 5000 %}
+        <!-- $50 in cents -->
+        {% assign progress = cart.total_price | times: 100 | divided_by: free_shipping_threshold %}
+        {% if progress > 100 %}
+          {% assign progress = 100 %}
+        {% endif %}
+        <div class="progress-container">
+          <div class="progress-bar" style="width: {{ progress }}%"></div>
+        </div>
+        <p>
+          {% if progress >= 100 %}
+            You've unlocked free shipping!
+          {% else %}
+            Spend {{ free_shipping_threshold | minus: cart.total_price | money }} more for free shipping
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="sidebar-cart__items" id="sidebar-cart-items">
+        {% for item in cart.items %}
+          {% render 'cart-item', item: item %}
+        {% endfor %}
+      </div>
+
+      <div class="sidebar-cart__footer">
+        <!-- Order note -->
+        <div class="order-note">
+          <button class="order-note__toggle" onclick="toggleOrderNote()">Add order note</button>
+          <div class="order-note__content" id="order-note-content" style="display: none;">
+            <textarea id="cart-note" placeholder="Special instructions for your order...">{{ cart.note }}</textarea>
+            <button onclick="saveOrderNote()">Save note</button>
+          </div>
+        </div>
+
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span>{{ cart.total_price | money }}</span>
+        </div>
+        <a href="/checkout" class="checkout-button">Go to checkout</a>
+      </div>
+    {% else %}
+      <div class="empty-cart">
+        <p>Your cart is empty</p>
+        <button class="continue-shopping" onclick="toggleSidebarCart()">Continue shopping</button>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .sidebar-cart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: right 0.3s ease;
+  }
+
+  .sidebar-cart.active {
+    right: 0;
+  }
+
+  .sidebar-cart__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar-cart__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    max-width: 400px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-cart__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-cart__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .free-shipping-bar {
+    margin-bottom: 20px;
+  }
+
+  .progress-container {
+    height: 5px;
+    background: #e0e0e0;
+    margin-bottom: 5px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: #4caf50;
+  }
+
+  .sidebar-cart__items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+
+  .cart-subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+
+  .checkout-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .empty-cart {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .continue-shopping {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .sidebar-cart__content {
+      width: 85%;
+    }
+  }
+</style>
