@@ -7,6 +7,8 @@ function toggleSidebarCart() {
 
 // Update cart quantity
 function updateQuantity(variantId, quantity) {
+  console.log(90);
+
   if (quantity < 1) quantity = 1;
 
   fetch('/cart/change.js', {
@@ -68,7 +70,6 @@ function refreshCart(cart) {
       // If cart is empty, close the sidebar
       if (cart.item_count === 0) {
         toggleSidebarCart();
-        console.log(1613);
       }
     });
 }
@@ -109,8 +110,6 @@ function toggleOrderNote() {
 // Open cart when adding a product
 document.addEventListener('DOMContentLoaded', function () {
   if (window.location.search.includes('added=true')) {
-    console.log(1234);
-
     toggleSidebarCart();
   }
 });

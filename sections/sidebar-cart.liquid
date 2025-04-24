@@ -2,30 +2,13 @@
   <div class="sidebar-cart__overlay" onclick="toggleSidebarCart()"></div>
   <div class="sidebar-cart__content">
     <div class="sidebar-cart__header">
-      <h3>Your Cart</h3>
-      <button class="sidebar-cart__close" onclick="toggleSidebarCart()">&times;</button>
+      <h3>My cart</h3>
+      <button class="sidebar-cart__close" onclick="toggleSidebarCart()">&#10094;</button>
     </div>
 
     {% if cart.item_count > 0 %}
       <!-- Progress bar for free shipping -->
-      <div class="free-shipping-bar">
-        {% assign free_shipping_threshold = 5000 %}
-        <!-- $50 in cents -->
-        {% assign progress = cart.total_price | times: 100 | divided_by: free_shipping_threshold %}
-        {% if progress > 100 %}
-          {% assign progress = 100 %}
-        {% endif %}
-        <div class="progress-container">
-          <div class="progress-bar" style="width: {{ progress }}%"></div>
-        </div>
-        <p>
-          {% if progress >= 100 %}
-            You've unlocked free shipping!
-          {% else %}
-            Spend {{ free_shipping_threshold | minus: cart.total_price | money }} more for free shipping
-          {% endif %}
-        </p>
-      </div>
+      {% render 'shipping-bar' %}
 
       <div class="sidebar-cart__items" id="sidebar-cart-items">
         {% for item in cart.items %}
@@ -86,20 +69,33 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    width: 430px;
     height: 100%;
     background: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
+
+    border-radius: 30px 0 0 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+    background: #fff;
   }
 
   .sidebar-cart__header {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
+    h3 {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 20px;
+      color: #000;
+      margin: 0 auto;
+    }
   }
 
   .sidebar-cart__close {
@@ -138,12 +134,22 @@
   }
 
   .checkout-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background: #000;
-    color: white;
-    text-align: center;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 390px;
+    height: 55px;
+
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    background: #93478f;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
   }
 
